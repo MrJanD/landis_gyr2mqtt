@@ -105,4 +105,5 @@ class HeatMeterSensor(CoordinatorEntity, RestoreSensor):
 
 def convert_gj_to_mwh(gigajoule) -> float:
     """Convert GJ to MWh using the conversion value."""
-    return round(gigajoule * GJ_TO_MWH, 5)
+    if gigajoule is not None:
+        return round(gigajoule * GJ_TO_MWH, 5)
